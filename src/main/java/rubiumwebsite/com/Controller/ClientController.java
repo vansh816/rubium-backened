@@ -14,10 +14,21 @@ public class ClientController {
 
     private final ClientService contactService;
 
-    @PostMapping("/submit")
-    public ResponseEntity<Client> submit(@Valid @RequestBody Client client) {
-        return ResponseEntity.ok(contactService.saveContact(client));
-    }}
+//    @PostMapping("/submit")
+//    public ResponseEntity<Client> submit(@Valid @RequestBody Client client) {
+//        return ResponseEntity.ok(contactService.saveContact(client));
+//    }
+@PostMapping("/submit")
+public ResponseEntity<?> submit(@Valid @RequestBody Client client) {
+    try {
+        Client savedClient = contactService.saveContact(client);
+        return ResponseEntity.ok(savedClient);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return ResponseEntity.status(500).body(e.getMessage());
+    }
+}
+}
 //
 //    @GetMapping("/all")
 //    public ResponseEntity<List<Client>> getAllClient() {
