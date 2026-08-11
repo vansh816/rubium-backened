@@ -19,13 +19,11 @@ import java.util.List;
 //            emailService.sendMailToClient(client);
 //            return contactRepository.save(client);
 //        }
-public Client saveContact(Client client) {
-    Client savedClient = contactRepository.save(client);
 
-    // Temporary: test MongoDB separately
-    // emailService.sendMailToClient(client);
-
-    return savedClient;
+    public Client saveContact(Client client) {
+        Client savedClient = contactRepository.save(client);
+        emailService.sendMailToClient(client);
+        return savedClient;
 }
     }
 //
