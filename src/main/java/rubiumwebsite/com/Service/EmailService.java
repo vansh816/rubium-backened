@@ -15,7 +15,7 @@ public class EmailService {
     public void sendMailToClient(Client client) {
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setFrom("rubiumai@gmail.com");
+        message.setFrom("hello.rubiumai@gmail.com");
         message.setTo(client.getEmail());
         message.setSubject("Thank You for Contacting Rubium AI");
                 message.setText(
