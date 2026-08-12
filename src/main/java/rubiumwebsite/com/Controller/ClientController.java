@@ -6,7 +6,7 @@ import rubiumwebsite.com.Entity.Client;
 import rubiumwebsite.com.Service.ClientService;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://rubium-frontend-lovat.vercel.app")
 @RestController
 @RequestMapping
 @RequiredArgsConstructor
