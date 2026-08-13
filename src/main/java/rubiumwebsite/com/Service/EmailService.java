@@ -74,9 +74,7 @@ public class EmailService {
 
                         "<p>Best Regards,<br>" +
                         "Rubium AI Team</p>";
-
         SendEmailRequest request = SendEmailRequest.builder()
-//                .from("Rubium AI <onboarding@resend.dev>")
                 .from("Rubium AI <hello@rubiumai.com>")
                 .to(client.getEmail())
                 .subject("Thank You for Contacting Rubium AI")
