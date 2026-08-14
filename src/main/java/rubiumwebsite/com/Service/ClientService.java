@@ -16,7 +16,7 @@ public class ClientService {
 
     public Client saveContact(Client client) {
         Client savedClient = contactRepository.save(client);
-        emailService.sendMailToClient(client);
+       // emailService.sendMailToClient(client);
         return savedClient;
     }
 }
