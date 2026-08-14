@@ -37,6 +37,7 @@ import com.resend.Resend;
 import com.resend.services.emails.model.SendEmailRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import rubiumwebsite.com.Entity.Client;
 
@@ -47,7 +48,7 @@ public class EmailService {
 
     @Value("${spring.resend.api-key}")
     private String resendApiKey;
-
+    @Async
     public void sendMailToClient(Client client) {
 
         Resend resend = new Resend(resendApiKey);

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import rubiumwebsite.com.Entity.Client;
 import rubiumwebsite.com.Service.ClientService;
 import org.springframework.web.bind.annotation.*;
+import rubiumwebsite.com.Service.EmailService;
 
 
 //@CrossOrigin(origins = "https://rubium-frontend-5d763xzt9-sharmavn258-6395s-projects.vercel.app")
@@ -14,23 +15,20 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ClientController {
 
-    private final ClientService contactService;
+    private final ClientService clientService;
 
-//    @PostMapping("/submit")
-//    public ResponseEntity<Client> submit(@Valid @RequestBody Client client) {
-//        return ResponseEntity.ok(contactService.saveContact(client));
-//    }
+
+
 @PostMapping("/submit")
 public ResponseEntity<?> submit(@Valid @RequestBody Client client) {
     try {
-        Client savedClient = contactService.saveContact(client);
+        Client savedClient = clientService.saveContact(client);
         return ResponseEntity.ok(savedClient);
     } catch (Exception e) {
         e.printStackTrace();
         return ResponseEntity.status(500).body(e.getMessage());
     }
-}
-}
+}}
 //
 //    @GetMapping("/all")
 //    public ResponseEntity<List<Client>> getAllClient() {
