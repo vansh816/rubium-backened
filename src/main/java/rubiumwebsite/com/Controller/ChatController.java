@@ -9,8 +9,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/chat")
 @CrossOrigin(origins = {"https://rubiumai.com" ,
-"https://localhost:5173" ,
-        "https:localhost:5174"
+"http://localhost:5173" ,
+        "http:localhost:5174"
 })
 public class ChatController {
 
